@@ -3,12 +3,12 @@
 #include <QTranslator>
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
+	QApplication app(argc, argv);
     QTranslator *translator=new QTranslator;
-    translator->load("C:/Users/CMOS/Desktop/QquickLookCamera/QquickLookCamera/QquickLookCamera.qm");
-    a.installTranslator(translator);
+    translator->load("C:/Users/ranji/Desktop/QquickLookCamera/QquickLookCamera/QquickLookCamera.qm");
+    app.installTranslator(translator);
 	QquickLookCamera w;
 	w.setGeometry(180,50,950,600);
 	w.show();
-	return a.exec();
+	return app.exec();
 }

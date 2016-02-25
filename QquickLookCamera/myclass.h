@@ -7,14 +7,16 @@
 #include "./QData/rotateDateProvider.h"
 #include "./QView/IWindowItem.h"
 #include "./QView/Utility/Pixel8To32.h"
-#include"./QView/Utility/bayer2rgb.h"
+#include "./QView/Utility/bayer2rgb.h"
 
 #include "./QView/ImageMagnifierItem.h"
 #include "./SaveFile/SaveToBmp24.h"
 #include "./SaveFile/SaveToBmpGray.h"
 #include <QTimer>
-#include<qdebug.h>
+#include<QDebug>
+
 class QGridLayout;
+
 class MyClass : public QWidget
 {
 	Q_OBJECT
@@ -47,7 +49,7 @@ protected:
 protected:
 
 	QTimer* m_refreshTimer{ nullptr };
-	ImageMagnifierItem* m_magnifier0{ new ImageMagnifierItem(this, 0, QImage::Format_RGB888) }; ////彩色图像格式24位	
+	ImageMagnifierItem* m_magnifier0{ new ImageMagnifierItem(this, 0, QImage::Format_RGB888) }; //彩色图像格式24位	
 	ImageMagnifierItem* m_magnifier00{ new ImageMagnifierItem(this) }; //图像格式24位	
 	ImageMagnifierItem* m_magnifier1{ new ImageMagnifierItem(this) }; //
 	ImageMagnifierItem* m_magnifier2{ new ImageMagnifierItem(this) }; //
@@ -56,8 +58,9 @@ protected:
 private:
 	//Ui::MyClassClass ui;
 	QGridLayout *gridLayout;
-protected:
-	void mousePressEvent(QMouseEvent *e);
+
+//protected:
+//	void mousePressEvent(QMouseEvent *e);
 signals:
 	void clicked();
 private slots :

@@ -17,7 +17,6 @@
 class QquickLookCamera : public QMainWindow
 {
 	Q_OBJECT
-
 public:
 	QquickLookCamera(QWidget *parent = 0);
 	~QquickLookCamera();
@@ -28,11 +27,8 @@ public:
 	// void createToolBars();
 	void cerateStatus();
 
-protected:
-   
 public slots :
 	void showOpenFile();
-    void saveFlie();
 	void stopComs();
 	void autoExposure();
 	void manualExposure();
@@ -42,11 +38,14 @@ public slots :
 	void showATI();
 	void showAG_CG();
 	void showRegister();
+
+	void saveFlie();
 	void rotate90();
+
 private:   //主界面
 	Ui::QquickLookCameraClass ui;
     QString digtalGain;  //全局变量保存上一次输入值
-	QString eTime;
+	QString expTime;
 	QString filename;
 	MyClass *showWidget;
 	Command *command;
@@ -55,7 +54,7 @@ private:   //主界面
 
 private:	//新建的dialog
 	AG_CG_Dialog *ag_cg_dialog;
-	QComboBox *AG_CGcomBox;
+	//QComboBox *AG_CGcomBox;
 
 private:
 	QLineEdit *expTimeEdit;

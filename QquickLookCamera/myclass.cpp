@@ -199,10 +199,10 @@ void MyClass::showMagnifierBack()
 	setLayout(gridLayout);
 }
 
-void MyClass::mousePressEvent(QMouseEvent *e)
-{
-  if (e->button()==Qt::LeftButton)
-  {
-	  emit clicked();
-  }
-}
+//void MyClass::mousePressEvent(QMouseEvent *e)
+//{
+//  if (e->button()==Qt::LeftButton)
+//  {
+//	  emit clicked();
+//  }
+//}
