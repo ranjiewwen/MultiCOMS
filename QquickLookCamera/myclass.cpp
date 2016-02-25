@@ -18,7 +18,7 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	m_inputSrc1->registerOutputBuffer(0, m_cmosData1);	
 	m_inputSrc2->registerOutputBuffer(0, m_cmosData2);
 	m_inputSrc3->registerOutputBuffer(0, m_cmosData3);
-	//start启动线程，进入process；源数据InputCMOS：将接收数据放入缓冲区0；最后提供数据ArrayCameraDataItem：去帧头，放入缓冲区1；
+	//start启动线程（调用m_thrProcess = std::thread([this](){this->process(); })），进入process；源数据InputCMOS：将接收数据放入缓冲区0；
 	m_inputSrc0->start();
 	m_inputSrc1->start();
 	m_inputSrc2->start();
@@ -34,7 +34,7 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider2)->registerInputBuffer(0, m_cmosData2);
 	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider3)->registerInputBuffer(0, m_cmosData3);
 	//设置宽高
-	m_dataProvider0->setup(16, 1280, 1024);
+	m_dataProvider0->setup(16, 1280, 1024);   //最后提供数据ArrayCameraDataItem：去帧头，放入缓冲区1；
 	m_dataProvider1->setup(16, 1280, 1024);
 	m_dataProvider2->setup(16, 1280, 1024);
 	m_dataProvider3->setup(16, 1280, 1024);

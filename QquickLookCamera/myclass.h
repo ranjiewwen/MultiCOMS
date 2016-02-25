@@ -39,7 +39,7 @@ protected:
 	std::shared_ptr<IDataItem> m_rotateDateProvider3{ new rotateDateProvider };
 
 	IDataProcessUnit* m_inputSrc0{ new InputCMOS(3956, inet_addr("192.168.1.2")) };
-	IDataProcessUnit* m_inputSrc1{ new InputCMOS(3957, inet_addr("192.168.1.2")) };
+	IDataProcessUnit* m_inputSrc1{ new InputCMOS(3957, inet_addr("192.168.1.2")) };	
 	IDataProcessUnit* m_inputSrc2{ new InputCMOS(3958, inet_addr("192.168.1.2")) };
 	IDataProcessUnit* m_inputSrc3{ new InputCMOS(3959, inet_addr("192.168.1.2")) };
 	std::shared_ptr<IBuffer> m_cmosData0{ new CCirQueue };

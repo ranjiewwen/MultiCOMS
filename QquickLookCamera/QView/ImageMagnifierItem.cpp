@@ -42,7 +42,7 @@ int ImageMagnifierItem::setDataItemPtr(std::shared_ptr<IDataItem>& ptr)
    const FeaturesOfDataItem* features = m_dataProvider->constDataFeatures();
    if (!features)
        return ERR_INTERNAL_ERROR;
-   m_imgBuffer.reset(new unsigned char[m_range.width()*m_range.height()*static_cast<int>(features->payloadDataSize)]);//图像数据智能指针
+   m_imgBuffer.reset(new unsigned char[m_range.width()*m_range.height()*static_cast<int>(features->payloadDataSize)]);    //图像数据智能指针
    return EXEC_SUCCESS;
 }
 
