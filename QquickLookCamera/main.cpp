@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
     QTranslator *translator=new QTranslator;
-    translator->load("C:/Users/ranji/Desktop/QquickLookCamera/QquickLookCamera/QquickLookCamera.qm");
+    translator->load("../QquickLookCamera/QquickLookCamera.qm");
     app.installTranslator(translator);
 	QquickLookCamera w;
 	w.setGeometry(180,50,950,600);
