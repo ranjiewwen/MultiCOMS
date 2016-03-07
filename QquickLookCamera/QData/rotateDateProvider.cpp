@@ -57,7 +57,6 @@ bool rotateDateProvider::copyArea(int x,int y,int w,int h,unsigned char *extPtr)
 			&(*buffer) + ((y + _h)*m_features->payloadDataWidth + x) * static_cast<int>(m_features->payloadDataSize),
 			w*static_cast<int>(m_features->payloadDataSize));
 	}
-
 	return true;
 }
 

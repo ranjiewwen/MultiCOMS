@@ -28,11 +28,17 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider1)->registerInputBuffer(0, m_cmosData1);
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider2)->registerInputBuffer(0, m_cmosData2);
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider3)->registerInputBuffer(0, m_cmosData3);
+	//注册输出缓冲区
+	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider0)->registerOutputBuffer(0, m_cmosFinalData0);
+	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider1)->registerOutputBuffer(0, m_cmosFinalData1);
+	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider2)->registerOutputBuffer(0, m_cmosFinalData2);
+	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider3)->registerOutputBuffer(0, m_cmosFinalData3);
+
 	//旋转数据注册输入缓冲区
-	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider0)->registerInputBuffer(0, m_cmosData0);
-	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider1)->registerInputBuffer(0, m_cmosData1);
-	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider2)->registerInputBuffer(0, m_cmosData2);
-	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider3)->registerInputBuffer(0, m_cmosData3);
+	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider0)->registerInputBuffer(0, m_cmosFinalData0);
+	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider1)->registerInputBuffer(0, m_cmosFinalData1);
+	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider2)->registerInputBuffer(0, m_cmosFinalData2);
+	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider3)->registerInputBuffer(0, m_cmosFinalData3);
 	//设置宽高
 	m_dataProvider0->setup(16, 1280, 1024);   //最后提供数据ArrayCameraDataItem：去帧头，放入缓冲区1；
 	m_dataProvider1->setup(16, 1280, 1024);
@@ -114,7 +120,7 @@ void MyClass::setSaveFile()
 void MyClass::setRotate90()
 {
 	 qDebug() << "--------------图像旋转90-----------";
-
+	 std::cout << "---------图像旋转90----------";
 	 m_rotateDateProvider0->setup(16, 1024, 1280);  //将当前线程停止，开始新的线程
 	 m_rotateDateProvider1->setup(16, 1024, 1280);
 	 m_rotateDateProvider2->setup(16, 1024, 1280);

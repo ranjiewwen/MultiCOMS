@@ -8,10 +8,10 @@
 #include "instruct/Command.h"
 #include <QMouseEvent>
 #include <QComboBox>
-#include<QPushButton>
-#include<QDockWidget>
-#include<qframe.h>
-#include<qgroupbox.h>
+#include <QPushButton>
+#include <QDockWidget>
+#include <qframe.h>
+#include <qgroupbox.h>
 #include <QFileDialog>
 #include "../UI/ag_cg_dialog.h"
 class QquickLookCamera : public QMainWindow
