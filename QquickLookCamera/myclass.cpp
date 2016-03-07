@@ -115,10 +115,10 @@ void MyClass::setRotate90()
 {
 	 qDebug() << "--------------图像旋转90-----------";
 
-	//m_rotateDateProvider0->setup(16, 1280, 1024);  //将当前线程停止，开始新的线程
-	//m_rotateDateProvider1->setup(16, 1280, 1024);
-	//m_rotateDateProvider2->setup(16, 1280, 1024);
-	//m_rotateDateProvider3->setup(16, 1280, 1024);
+	 m_rotateDateProvider0->setup(16, 1024, 1280);  //将当前线程停止，开始新的线程
+	 m_rotateDateProvider1->setup(16, 1024, 1280);
+	 m_rotateDateProvider2->setup(16, 1024, 1280);
+	 m_rotateDateProvider3->setup(16, 1024, 1280);
 
 	m_magnifier0->setDataItemPtr(m_rotateDateProvider0);
 //	m_magnifier00->setDataItemPtr(m_dataProvider0);

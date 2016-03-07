@@ -9,6 +9,8 @@ class rotateDateProvider :
 protected:
 	//bool m_Buffer{false};
 	std::shared_ptr<unsigned char> m_imageBuffer;
+	std::shared_ptr<unsigned char> m_dualImageBuffer[2]; //entire image data buffer, dual
+	std::shared_ptr<unsigned char> m_dualAssistBuffer[2]; //entire assist data buffer, dual,6+8=14bytes frame header
 public:
 	virtual bool setup(int assWidth,int imgWidth,int height) override;
 	virtual bool copyArea(int x,int y,int w,int h,unsigned char *extPtr)const override;

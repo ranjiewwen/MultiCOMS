@@ -80,6 +80,7 @@ void rotateDateProvider::process()
 			continue;
 		}
 		int width=0, height=0;
+
        //完成图像数据旋转
 		Rotate(m_imageBuffer.get(), buf,width,height,90);
 	}
@@ -88,16 +89,16 @@ void rotateDateProvider::process()
 
 bool rotateDateProvider::internalImageDataPtr(const unsigned char*& ptr) const
 {
-	//if (!m_dualImageBuffer[1] || !ptr)
-	//	return false;
-	//ptr = m_dualImageBuffer[1].get();
+	if (!m_dualImageBuffer[1] || !ptr)
+		return false;
+	ptr = m_dualImageBuffer[1].get();
 	return true;
 }
 
 //get entire assist data ptr
 bool rotateDateProvider::internalAssistDataPtr(const unsigned char*& ptr) const
 {
-	//ptr = m_dualAssistBuffer[1].get();
+	ptr = m_dualAssistBuffer[1].get();
 	return true;
 }
 
