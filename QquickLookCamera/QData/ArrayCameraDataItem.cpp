@@ -37,15 +37,15 @@ bool ArrayCameraDataItem::setup(int assWidth, int imgWidth, int height)
     }
 
     //stop processing , reset image&assist data ptr, set features of width&height
-	IDataProcessUnit::stop();
+	IDataProcessUnit::stop();  //体会这一句的作用，看效果
     //need lock ?
-    for (int i=0; i<2; ++i)
+    for (int i=0; i<2; ++i)   //初始化双缓冲的大小，必须要
     {
         m_dualAssistBuffer[i] = ass[i];
         m_dualImageBuffer[i] = img[i];
     }
 
-    //testing  初始化缓冲区1中的数据
+   ////////开始测试代码 //testing  初始化缓冲区1中的数据
     unsigned char* buf = &(*img[1]);
     unsigned char* abuf = &(*ass[1]);
     for (int h=0; h<height; ++h)
@@ -67,6 +67,7 @@ bool ArrayCameraDataItem::setup(int assWidth, int imgWidth, int height)
 
 	return true;
 }
+
 
 void ArrayCameraDataItem::process()
 {
@@ -176,9 +177,9 @@ void ArrayCameraDataItem::storePayloadData(const unsigned char *buf)
 			if (m_dualImageBuffer[0] && m_dualImageBuffer[1])
 				memcpy(m_dualImageBuffer[1].get(), m_dualImageBuffer[0].get(), m_features->linesPerFrame*imgLineSize);
 
-			//数据放到输出缓冲区
-			if (m_outputBuffer[0].second)
-				memcpy(m_outputBuffer[0].second.get(), m_dualImageBuffer[1].get(), m_features->linesPerFrame*imgLineSize);
+			//数据放到输出缓冲区    不知道m_outputBuffer那个对象的 
+		//	if (m_outputBuffer[0].second)  
+		//		memcpy(m_outputBuffer[0].second.get(), m_dualImageBuffer[1].get(), m_features->linesPerFrame*imgLineSize);
 		}
 	}
 	else
@@ -218,5 +219,6 @@ bool ArrayCameraDataItem::internalAssistDataPtr(const unsigned char*& ptr) const
 	ptr = m_dualAssistBuffer[1].get();
 	return true;
 }
+
 
 

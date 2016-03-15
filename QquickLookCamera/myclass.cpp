@@ -14,7 +14,7 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	std::dynamic_pointer_cast<CCirQueue>(m_cmosData2)->Initial(1024 * 1296 * 256, 1024 * 1296 * 4);
 	std::dynamic_pointer_cast<CCirQueue>(m_cmosData3)->Initial(1024 * 1296 * 256, 1024 * 1296 * 4);
 	//数据源注册输出缓冲区
-	m_inputSrc0->registerOutputBuffer(0, m_cmosData0);
+	m_inputSrc0->registerOutputBuffer(0, m_cmosData0);  //向输出缓冲区中送数据
 	m_inputSrc1->registerOutputBuffer(0, m_cmosData1);	
 	m_inputSrc2->registerOutputBuffer(0, m_cmosData2);
 	m_inputSrc3->registerOutputBuffer(0, m_cmosData3);
@@ -24,10 +24,11 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	m_inputSrc2->start();
 	m_inputSrc3->start();
 	//数据提供注册输入缓冲区
-	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider0)->registerInputBuffer(0, m_cmosData0);
+	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider0)->registerInputBuffer(0, m_cmosData0);  //从输入缓冲区中取数据
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider1)->registerInputBuffer(0, m_cmosData1);
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider2)->registerInputBuffer(0, m_cmosData2);
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider3)->registerInputBuffer(0, m_cmosData3);
+
 	//注册输出缓冲区
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider0)->registerOutputBuffer(0, m_cmosFinalData0);
 	std::dynamic_pointer_cast<ArrayCameraDataItem>(m_dataProvider1)->registerOutputBuffer(0, m_cmosFinalData1);
@@ -39,6 +40,7 @@ MyClass::MyClass(QWidget *parent,Qt::WindowFlags f)
 	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider1)->registerInputBuffer(0, m_cmosFinalData1);
 	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider2)->registerInputBuffer(0, m_cmosFinalData2);
 	std::dynamic_pointer_cast<rotateDateProvider>(m_rotateDateProvider3)->registerInputBuffer(0, m_cmosFinalData3);
+
 	//设置宽高
 	m_dataProvider0->setup(16, 1280, 1024);   //最后提供数据ArrayCameraDataItem：去帧头，放入缓冲区1；
 	m_dataProvider1->setup(16, 1280, 1024);

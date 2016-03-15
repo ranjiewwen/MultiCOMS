@@ -13,7 +13,7 @@
 #include "./SaveFile/SaveToBmp24.h"
 #include "./SaveFile/SaveToBmpGray.h"
 #include <QTimer>
-#include<QDebug>
+#include <QDebug>
 
 class QGridLayout;
 
