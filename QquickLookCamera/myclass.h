@@ -9,7 +9,7 @@
 #include "./QView/Utility/Pixel8To32.h"
 #include "./QView/Utility/bayer2rgb.h"
 
-#include "./QView/ImageMagnifierItem.h"
+#include "./QView/ImageMagnifierItem.h"  //class ImageMagnifierItem;
 #include "./SaveFile/SaveToBmp24.h"
 #include "./SaveFile/SaveToBmpGray.h"
 #include <QTimer>

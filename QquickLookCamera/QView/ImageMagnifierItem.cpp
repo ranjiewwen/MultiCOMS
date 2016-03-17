@@ -28,7 +28,7 @@ void  ImageMagnifierItem::mousePressEvent(QMouseEvent *e)//µ¥»÷ÇĞ»»ÏÔÊ¾
 		emit leftMouseClicked();
 	}
 }
-void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//Ë«»÷»Ö¸´
+void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//Ë«»÷»Ö¸´  //ÔõÃ´ÖªµÀÕâÊÇË«»÷
 {
 	emit doubleClickEvent();
 }

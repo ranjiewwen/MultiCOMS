@@ -21,8 +21,8 @@ protected:
     std::shared_ptr<unsigned char> m_imgBuffer{nullptr};
 protected:
     virtual void paintEvent(QPaintEvent *) override;
-	void mousePressEvent(QMouseEvent *ec);
-	void mouseDoubleClickEvent(QMouseEvent *);
+	void mousePressEvent(QMouseEvent *ec);   //可以用基类的mouse函数
+	void mouseDoubleClickEvent(QMouseEvent *);  
 private:
 	int cmosNumber;
 	QImage::Format strFormat;

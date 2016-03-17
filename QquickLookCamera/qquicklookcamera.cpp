@@ -14,7 +14,7 @@ command(new Command(4567, inet_addr("192.168.1.1"), 3955, inet_addr("192.168.1.2
 	//setGeometry(50,50,900,600);
 	//QWidget *centralWidget = new QWidget;
 
-	showWidget = new MyClass(this);
+	showWidget = new MyClass(this);   //new ,delete???
 	showWidget->setMinimumSize(400, 400);
 	setCentralWidget(showWidget);       //设置主窗口界面
 	ctrlFrame = new QFrame;
@@ -72,10 +72,10 @@ void QquickLookCamera::createControlFrame()
 	{
 		bool ok;
 		QString valueStr = digtalGainEdit->text();
-		int valueDouble = valueStr.toDouble(&ok);
+		double valueDouble = valueStr.toDouble(&ok);
 		command->setDG(valueDouble);
 	});
-	QLabel *setATI = new QLabel(tr("set Target Illumination"));           //tai（0-1023）默认值为0xb8-------10进制输入 
+	QLabel *setATI = new QLabel(tr("set Target Illumination"));  //set Target Average Intensity         //tai（0-1023）默认值为0xb8-------10进制输入 
 	setATIEdit = new QLineEdit;
 	setATIEdit->setPlaceholderText(tr("input 0-1023(default0xb8):"));
 	connect(setATIEdit, &QLineEdit::textChanged, this, [this]()
@@ -93,7 +93,7 @@ void QquickLookCamera::createControlFrame()
 		bool ok;
 		QString valueStr = digtalGainEdit->text();
 		int valueInt = valueStr.toInt(&ok);
-		command->setDG(valueInt);
+		command->setAG_CG(valueInt);
 	});
 	QLabel *setRegister = new QLabel(tr("write register"));               //addr：寄存器地址，9bit;  data：16bit
 	QHBoxLayout *registerDddrLayout = new QHBoxLayout;
