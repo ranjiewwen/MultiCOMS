@@ -28,7 +28,7 @@ void  ImageMagnifierItem::mousePressEvent(QMouseEvent *e)//单击切换显示
 		emit leftMouseClicked();
 	}
 }
-void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//双击恢复  //怎么知道这是双击
+void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//双击恢复  //怎么知道这是双击-->这是QMouseEvent事件。
 {
 	emit doubleClickEvent();
 }

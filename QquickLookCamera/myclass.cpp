@@ -138,11 +138,11 @@ void MyClass::setRotate90()
 void MyClass::showMagnifier0()
 {
 	//qDebug()<< "-----------myclassdianjichenggong------------------";
-	gridLayout->removeWidget(m_magnifier0);
+	gridLayout->removeWidget(m_magnifier0);  // m_magnifier0->setVisible(true);
 	gridLayout->removeWidget(m_magnifier1);
 	gridLayout->removeWidget(m_magnifier2);
 	gridLayout->removeWidget(m_magnifier3);
-
+	
 	gridLayout->addWidget(m_magnifier0, 0, 0, 3, 1);
 	gridLayout->addWidget(m_magnifier1, 0, 1, 1, 1);
 	gridLayout->addWidget(m_magnifier2, 1, 1, 1, 1);

@@ -221,7 +221,7 @@ void QquickLookCamera::createActions()
 
 void QquickLookCamera::createMenus()
 {
-
+	//ÎÄ¼þ²Ëµ¥
 	fileMenu = menuBar()->addMenu(tr("file"));
 	fileMenu->addAction(openFileAction);
 	fileMenu->addAction(saveAction);
