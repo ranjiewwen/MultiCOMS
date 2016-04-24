@@ -9,7 +9,9 @@ ImageMagnifierItem::ImageMagnifierItem(QWidget *parent, Qt::WindowFlags f, QImag
 {
 	//m_image = new QImage(m_range, QImage::Format_ARGB32);  //default range 5*5, scale to the rectangle of window
 	m_image = new QImage(m_range, strFormat);
-    //unsigned char* bits = m_image->bits(); for (int i=0; i<25*25; ++i)   *((unsigned int*)(bits+i*4)) = (((10*i)<<8) | (0xff<<24));    
+    //unsigned char* bits = m_image->bits(); 
+	//for (int i=0; i<25*25; ++i)   
+	    //*((unsigned int*)(bits+i*4)) = (((10*i)<<8) | (0xff<<24));    
 }
 
 ImageMagnifierItem::~ImageMagnifierItem()
