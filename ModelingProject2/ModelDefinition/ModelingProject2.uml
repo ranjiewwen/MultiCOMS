@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c2997700-77fa-4e24-bcc1-84c1dfa062bf"
+  name="ModelingProject2" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="342d154b-4768-49ec-9518-1579b4056a36"
+        name="IWindowItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="1b1fd0af-e367-41a9-9acc-346962d85696"
+            name="m_convertor"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="3146d9b9-45ca-4d5d-8620-06e95259b8ee"
+                LastKnownName="PixelConvertor"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e33cebd6-9e76-4577-a6b3-f57bead05f29"
+            name="m_dataProvider"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d5429b67-67c6-4c8a-9dde-3ce4070bcbcd"
+                LastKnownName="IDateItem"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="eacbee40-9196-408d-84fa-7e5334337f3d"
+            name="m_file"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="717c6ce1-8669-47cd-a341-0dc1042e435c"
+                LastKnownName="SaveToFile"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6dfd61ed-4b3c-4e48-ada9-667674342862"
+            name="m_bgColor"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9a6652ef-f133-49fe-a6ce-8aa0b3c60ffe"
+                LastKnownName="QColor"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4209bcc5-6e39-4abd-9998-8152bd654720"
+            name="ReturnCode"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a6a94b04-887a-4deb-9753-af0100a95580"
+                LastKnownName="enum"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bdccce3f-970a-4ef5-9f8b-1b9cc7a3ba61"
+            name="IWindowItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ab72ce9-de35-471c-824c-2cd1b6a8e586"
+                  name="IWindowIten *"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a5e442a7-8aef-443b-86ea-6852b47bf7ac"
+            name="&lt;&lt;const&gt;&gt; displayModeDisPlay"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="277e5599-67d7-4854-89ce-4bfd3c8964d5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="46c00046-5f33-4511-b91b-12303cb5e64d"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1e2b573d-3224-4d06-bfdf-6c6524a80e08"
+            name="&lt;&lt;const&gt;&gt;clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c47c70b-27da-4bae-9f0f-0868b00f4398"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="342d154b-4768-49ec-9518-1579b4056a36"
+                      LastKnownName="IWindowItem"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="40c399d7-6a49-4bb8-8543-2707def4505d"
+            name="leftMouseButtonDbClick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f2290baf-b22e-4058-959d-cdc7315c1331"
+                  name="QMouseEvent *"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ffda9835-fa6f-4c9d-ae38-2a4777ce9731"
+            name="leftMouseButtonDown"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bd47d690-246f-421a-b7ae-ea284946a0ce"
+                  name="QMouseEvent*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="86c0eb21-a1c9-4936-aff5-2d134fdc880b"
+            name="rightMouseButtonDown"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e3461e8-12d7-4f9d-9692-082c07f07960"
+                  name="QMouseEvent*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ee420c63-23b0-4250-ac7e-5562aadfc0cd"
+            name="&lt;&lt;virtual&gt;&gt;editItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df876589-62d8-415d-b507-fe9ee1e80380"
+                  name=")：int("
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4a41fcdf-25f6-4e4b-8017-71fb09c88b84"
+            name="&lt;&lt;virtual&gt;&gt; handleAction"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cd7b4873-5265-44ef-9a36-b5a4897f284c"
+                  name="const QAction*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8373515c-1a7c-43de-a61f-acf1a9c003e2"
+            name="&lt;&lt;virtual&gt;&gt; refersh"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="075304aa-ee9f-40b2-bf3a-4acde97a94a7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="46c00046-5f33-4511-b91b-12303cb5e64d"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9179dec3-7e70-49be-b756-355d5285e77d"
+            name="&lt;&lt;virtual&gt;&gt;&lt;&lt;const&gt;&gt;saveToFile"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2aa49537-8621-45cb-bab0-57bb4d495150"
+            name="setBackgroundColor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9149f458-dab9-4a4f-8722-899718565859"
+                  name="const QColor&amp; color"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0dbd40d0-a493-4cb6-9906-10637a565e2c"
+            name="&lt;&lt;virtual&gt;&gt; setConvertor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7fa5a636-b0d1-4683-a21e-6cb047de73e6"
+                  name="std::shared_ptr&lt;PixelConvertor&gt;&amp; convertor"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3de65ae2-0031-483b-b348-4076a9ff5ac2"
+            name="&lt;&lt;virtual&gt;&gt; setDataItemPtr"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10ed193f-e6ce-4c34-aee9-cf974d26fc50"
+                  name="std::shared_ptr&lt;IDataItem&gt;&amp; ptr"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6a218a85-043c-476f-b6e4-3c4484be8409"
+            name="&lt;&lt;virtual&gt;&gt;setSave"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ead55b4f-9ab8-46bd-94d3-769c496dcced"
+                  name="std::shared_ptr&lt;SaveToFile&gt;&amp; file"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9ce5baa7-bb6a-4579-a79a-758a2618ab60"
+        name="ImageMagnifierItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="e8f0b6e7-3617-4a27-8937-dbacf78afee3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="342d154b-4768-49ec-9518-1579b4056a36"
+              LastKnownName="IWindowItem"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+          <generalization
+            Id="b40c74f5-a14f-4a18-9bb1-ce7cc2fc450d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9f63b25a-74e6-459d-b313-58818b1c91cd"
+              LastKnownName="QWidget"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="56a71341-161e-4cb9-a572-ea5227ffd72b"
+            name="cmosNumber"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="46c00046-5f33-4511-b91b-12303cb5e64d"
+                LastKnownName="int"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c4d296ae-e160-4415-9652-508a577edcc4"
+            name="m_image"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="268e881a-981e-4aa9-97f6-823e965fdae5"
+                LastKnownName="QImage"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="df2fc940-9246-41ed-a167-9e0018712c33"
+            name="m_imgBuffer"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a64e6f89-bb7a-4b61-8504-86d962810cde"
+                LastKnownName="std::shared_ptr&lt;unsigned char&gt;"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d9d22f67-7a29-44c6-aec1-042d1cac82cd"
+            name="m_range"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9f29ed5d-f29e-4771-8403-760b2cd86a18"
+                LastKnownName="QSize"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2a33d32e-63de-4613-b68a-087193b09703"
+            name="&lt;&lt;const&gt;&gt;displayModeDisplay"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="46aff66f-96bf-473e-9666-8e227966430a"
+            name="ImageMagnifierItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="84fcfa43-f068-4c87-89cb-900a6f517749"
+                  name="QWidget* parent"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="62b339da-6f4e-4a2d-b04d-3338540bb14b"
+                      name="DefaultValue"
+                      value="nullptr" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ce0fb48-b36d-43a5-87bd-67f8bef9e07e"
+                  name="Qt::WindowFlags f"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="4c6e0490-390c-4361-8862-e587973a9375"
+                      name="DefaultValue"
+                      value="0" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="895b97e6-fec0-46dd-b328-f41237e16df6"
+                  name="QImage::Format str = QImage::Format_ARGB32"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b3eaa5b1-2cbc-4f11-a99d-dc7acffb6dc0"
+            name="mousePressEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8cd4665d-a671-427d-8fad-0647baec4748"
+                  name="QMouseEvent *ec"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="64f7c472-5c2f-4334-8fb8-b67e951dfb11"
+            name="mouseDoubleClickEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="70cd4612-bcaa-43e1-b423-48710ace5a40"
+                  name="QMouseEvent *"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7c296f0d-f2b1-4d17-be48-510c4f680293"
+            name="paintEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bc37eb49-5971-46c7-af83-89064acd0b83"
+                  name="QPaintEvent *"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ad084f82-c464-41fb-b8d3-40d010900bab"
+            name="setDataItemPtr"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="617ff37f-51ef-4204-9a45-2c6cbadf8c26"
+                  name="std::shared_ptr&lt;IDataItem&gt;&amp; ptr"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="676e3c20-940c-49b2-acc3-4121d4bdc6b0"
+            name="refresh"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f90e3ebc-c800-4ffd-8144-ccdc3c95b55f"
+            name="saveToFile"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="14164c5f-c446-42ee-b094-b19e5b4efd6e"
+            name="setMagnifierRange"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2732d849-3d08-431b-8f51-1eca854db6ca"
+                  name="int width"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c7f2c5ea-be9e-4dfa-b516-03a262d7b31e"
+                  name="int height"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d5429b67-67c6-4c8a-9dde-3ce4070bcbcd"
+        name="IDateItem" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="46c00046-5f33-4511-b91b-12303cb5e64d"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="3146d9b9-45ca-4d5d-8620-06e95259b8ee"
+        name="PixelConvertor" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="717c6ce1-8669-47cd-a341-0dc1042e435c"
+        name="SaveToFile" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9a6652ef-f133-49fe-a6ce-8aa0b3c60ffe"
+        name="QColor" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a6a94b04-887a-4deb-9753-af0100a95580"
+        name="enum" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="268e881a-981e-4aa9-97f6-823e965fdae5"
+        name="QImage" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a64e6f89-bb7a-4b61-8504-86d962810cde"
+        name="std::shared_ptr&lt;unsigned char&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9f29ed5d-f29e-4771-8403-760b2cd86a18"
+        name="QSize" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1bc6d6f8-e3cb-4b57-9174-c29d9e94cd4a"
+        name="ImageWindowItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="3fc7af91-2588-4c23-94f1-a9089c0b1a1d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="342d154b-4768-49ec-9518-1579b4056a36"
+              LastKnownName="IWindowItem"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+          <generalization
+            Id="ac234a83-e343-4bda-bde9-44181df68b80"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9f63b25a-74e6-459d-b313-58818b1c91cd"
+              LastKnownName="QWidget"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="949dba15-bc7c-4745-befc-f5f9901dcfae"
+        name="ImageRulerItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="ce1d2c22-9c62-4a20-8806-999b4f96fb9f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="342d154b-4768-49ec-9518-1579b4056a36"
+              LastKnownName="IWindowItem"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+          <generalization
+            Id="a3f740af-2393-4c31-8c1c-9e57f793822b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9f63b25a-74e6-459d-b313-58818b1c91cd"
+              LastKnownName="QWidget"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b90420ed-5e5c-4e15-aa76-8e40b2450d97"
+        name="DataTableItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="4370dbdb-92d6-4717-acc1-d0f77782cec9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="342d154b-4768-49ec-9518-1579b4056a36"
+              LastKnownName="IWindowItem"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+          <generalization
+            Id="d7605059-2d36-4b11-9ada-8bc7551b08c9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9f63b25a-74e6-459d-b313-58818b1c91cd"
+              LastKnownName="QWidget"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ce9b2402-00bc-4d81-9fe5-e5f056c6c2cc"
+        name="BasicQViewWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="3ead1f8a-8089-44eb-96e7-86f80187c4c4"
+            isDerived="false"
+            sourceEndRoleName="BasicQViewWindow"
+            targetEndRoleName="ImageWindowItem"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1bc6d6f8-e3cb-4b57-9174-c29d9e94cd4a"
+              LastKnownName="ImageWindowItem"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="abf6b648-b717-4900-9ca9-8c542d9f425e"
+                  name="BasicQViewWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="17b7c597-e481-42d6-8ec1-76bb62c32540"
+                  name="ImageWindowItem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9a07a1f5-ed38-4706-96d3-e158a902189d"
+            isDerived="false"
+            sourceEndRoleName="BasicQViewWindow"
+            targetEndRoleName="DataTableItem"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b90420ed-5e5c-4e15-aa76-8e40b2450d97"
+              LastKnownName="DataTableItem"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c07d3364-9337-473a-9279-1435fb9927d0"
+                  name="BasicQViewWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f53f7fa-19b6-4bdc-bf4c-498819166567"
+                  name="DataTableItem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="72581573-1fd5-4ae9-871c-a529c0c9d564"
+            isDerived="false"
+            sourceEndRoleName="BasicQViewWindow"
+            targetEndRoleName="ImageRulerItem"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="949dba15-bc7c-4745-befc-f5f9901dcfae"
+              LastKnownName="ImageRulerItem"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="83aeb80f-bc9b-4034-be2b-50d189cca510"
+                  name="BasicQViewWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e190f35-6452-462e-9caa-67c54d372981"
+                  name="ImageRulerItem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3df50762-9cde-4536-9131-f733ec6daf7e"
+            isDerived="false"
+            sourceEndRoleName="BasicQViewWindow"
+            targetEndRoleName="ImageMagnifierItem"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9ce5baa7-bb6a-4579-a79a-758a2618ab60"
+              LastKnownName="ImageMagnifierItem"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5828dc6f-58cb-4cd4-88a0-0676301b514d"
+                  name="BasicQViewWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ba2bc15-9698-4c84-ba69-ebfc3cfbb8c0"
+                  name="ImageMagnifierItem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9f63b25a-74e6-459d-b313-58818b1c91cd"
+        name="QWidget"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

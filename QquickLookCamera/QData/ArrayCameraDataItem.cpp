@@ -37,29 +37,29 @@ bool ArrayCameraDataItem::setup(int assWidth, int imgWidth, int height)
     }
 
     //stop processing , reset image&assist data ptr, set features of width&height
-	IDataProcessUnit::stop();
+	IDataProcessUnit::stop();  //体会这一句的作用，看效果
     //need lock ?
-    for (int i=0; i<2; ++i)
+    for (int i=0; i<2; ++i)   //初始化双缓冲的大小，必须要
     {
         m_dualAssistBuffer[i] = ass[i];
         m_dualImageBuffer[i] = img[i];
     }
 
-    ////testing  初始化缓冲区1中的数据
-    //unsigned char* buf = &(*img[1]);
-    //unsigned char* abuf = &(*ass[1]);
-    //for (int h=0; h<height; ++h)
-    //{
-    //    for (int w=0;w<imgWidth; ++w)
-    //    {
-    //        buf[h*imgWidth+w] = w;
-    //    }
-    //    for (int w=0; w<assWidth; ++w)
-    //    {
-    //        abuf[h*assWidth+w] = h;
-    //    }
-    //}
-    ////end testing
+   ////////开始测试代码 //testing  初始化缓冲区1中的数据
+    unsigned char* buf = &(*img[1]);
+    unsigned char* abuf = &(*ass[1]);
+    for (int h=0; h<height; ++h)
+    {
+        for (int w=0;w<imgWidth; ++w)
+        {
+            buf[h*imgWidth+w] = w;
+        }
+        for (int w=0; w<assWidth; ++w)
+        {
+            abuf[h*assWidth+w] = h;
+        }
+    }
+    //end testing
 
     //start processing
 	IDataItem::setup(assWidth, imgWidth, height);
@@ -68,38 +68,6 @@ bool ArrayCameraDataItem::setup(int assWidth, int imgWidth, int height)
 	return true;
 }
 
-
-//copy area of image data
-bool ArrayCameraDataItem::copyArea(int x, int y, int w, int h, unsigned char* extPtr) const
-{
-    if (!m_dualImageBuffer[1] || !extPtr)
-        return false;
-
-    unsigned char* buffer = m_dualImageBuffer[1].get();
-    for (int _h = 0; _h < h; ++_h) {
-        memcpy(extPtr + _h*w*static_cast<int>(m_features->payloadDataSize),
-            &(*buffer) + ((y + _h)*m_features->payloadDataWidth + x) * static_cast<int>(m_features->payloadDataSize),
-            w*static_cast<int>(m_features->payloadDataSize));
-    }
-
-    return true;
-}
-
-//get entire image data ptr
-bool ArrayCameraDataItem::internalImageDataPtr(const unsigned char*& ptr) const
-{
-	if (!m_dualImageBuffer[1] || !ptr)
-		return false;
-    ptr = m_dualImageBuffer[1].get();
-    return true;
-}
-
-//get entire assist data ptr
-bool ArrayCameraDataItem::internalAssistDataPtr(const unsigned char*& ptr) const
-{
-    ptr = m_dualAssistBuffer[1].get();
-    return true;
-}
 
 void ArrayCameraDataItem::process()
 {
@@ -112,7 +80,7 @@ void ArrayCameraDataItem::process()
     int assLineSize = m_features->attachedDataWidth*static_cast<int>(m_features->attachedDataSize);
     int lineSize = imgLineSize+assLineSize;
     
-    std::shared_ptr<IBuffer>& inputBuffer_zero = m_inputBuffer[0].second;
+    std::shared_ptr<IBuffer>& inputBuffer_zero = m_inputBuffer[0].second;  //从缓冲区内取数据，然后去帧头
 	CMOS_FRAME_HEAD* pkgHeader = nullptr;
     while (m_processing)
     {
@@ -145,7 +113,7 @@ void ArrayCameraDataItem::process()
             continue;
         }
 		
-		storePayloadData(buf);//存储数据
+		storePayloadData(buf);    //存储数据（采用双缓冲形式），包括丢帧处理
 		inputBuffer_zero->pop_front(imgLineSize + headerSize);//将该数据包弹出
     }
 }  
@@ -208,6 +176,10 @@ void ArrayCameraDataItem::storePayloadData(const unsigned char *buf)
 			resetCounter();  //reset and look for the first line of next img
 			if (m_dualImageBuffer[0] && m_dualImageBuffer[1])
 				memcpy(m_dualImageBuffer[1].get(), m_dualImageBuffer[0].get(), m_features->linesPerFrame*imgLineSize);
+
+			//数据放到输出缓冲区    不知道m_outputBuffer那个对象的 
+		//	if (m_outputBuffer[0].second)  
+		//		memcpy(m_outputBuffer[0].second.get(), m_dualImageBuffer[1].get(), m_features->linesPerFrame*imgLineSize);
 		}
 	}
 	else
@@ -216,6 +188,37 @@ void ArrayCameraDataItem::storePayloadData(const unsigned char *buf)
 	}
 }
 
+//copy area of image data
+bool ArrayCameraDataItem::copyArea(int x, int y, int w, int h, unsigned char* extPtr) const
+{
+	if (!m_dualImageBuffer[1] || !extPtr)
+		return false;
+
+	unsigned char* buffer = m_dualImageBuffer[1].get();
+	for (int _h = 0; _h < h; ++_h) {
+		memcpy(extPtr + _h*w*static_cast<int>(m_features->payloadDataSize),
+			&(*buffer) + ((y + _h)*m_features->payloadDataWidth + x) * static_cast<int>(m_features->payloadDataSize),
+			w*static_cast<int>(m_features->payloadDataSize));
+	}
+
+	return true;
+}
+
+//get entire image data ptr
+bool ArrayCameraDataItem::internalImageDataPtr(const unsigned char*& ptr) const
+{
+	if (!m_dualImageBuffer[1] || !ptr)
+		return false;
+	ptr = m_dualImageBuffer[1].get();
+	return true;
+}
+
+//get entire assist data ptr
+bool ArrayCameraDataItem::internalAssistDataPtr(const unsigned char*& ptr) const
+{
+	ptr = m_dualAssistBuffer[1].get();
+	return true;
+}
 
 
 

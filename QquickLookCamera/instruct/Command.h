@@ -1,6 +1,8 @@
 #ifndef _COMMAND_HPP_
 #define _COMMAND_HPP_
 #include "../QData/initsock.h"
+
+//PC->FPGA的指令，控制相机参数改变 ；但是先要要个指令触发硬件发数据，然后InputCOMS开始接收数据。
 class Command
 {
 public:

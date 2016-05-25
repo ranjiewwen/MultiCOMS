@@ -30,7 +30,7 @@ void  ImageMagnifierItem::mousePressEvent(QMouseEvent *e)//单击切换显示
 		emit leftMouseClicked();
 	}
 }
-void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//双击恢复
+void ImageMagnifierItem::mouseDoubleClickEvent(QMouseEvent *e)//双击恢复  //怎么知道这是双击-->这是QMouseEvent事件。
 {
 	emit doubleClickEvent();
 }
@@ -68,10 +68,10 @@ int ImageMagnifierItem::saveToFile() const
 	if (cmosNumber == 0)
 	{
 		m_convertor->convert(bufferConverted, buffer, m_range.height(), m_range.width());
-		m_file->save(bufferConverted, m_range.height(), m_range.width(), "C:\\Users\\CMOS\\Desktop\\QquickLookCamera\\BMP\\", name);
+		m_file->save(bufferConverted, m_range.height(), m_range.width(), /*"../QquickLookCamera/BMP/"*/"C:\\Users\\CMOS\\Desktop\\MultiCOMS\\BMP\\", name);
 	}
 	else  //灰度图像直接存储原始bayer(8为深度)数据   //如果全部转换后存储，8->32转换有错。
-		m_file->save(buffer, m_range.height(), m_range.width(), "C:\\Users\\CMOS\\Desktop\\QquickLookCamera\\BMP\\", name);  //不能为空指针，否则访问地址出错，而且放在displayModeDisplay()会实时保存
+		m_file->save(buffer, m_range.height(), m_range.width(), "C:\\Users\\CMOS\\Desktop\\MultiCOMS\\BMP\\", name);  //不能为空指针，否则访问地址出错，而且放在displayModeDisplay()会实时保存
 	
 	delete buffer;
 	delete bufferConverted;

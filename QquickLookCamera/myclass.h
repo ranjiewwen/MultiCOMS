@@ -9,11 +9,11 @@
 #include "./QView/Utility/Pixel8To32.h"
 #include "./QView/Utility/bayer2rgb.h"
 
-#include "./QView/ImageMagnifierItem.h"
+#include "./QView/ImageMagnifierItem.h"  //class ImageMagnifierItem;
 #include "./SaveFile/SaveToBmp24.h"
 #include "./SaveFile/SaveToBmpGray.h"
 #include <QTimer>
-#include<QDebug>
+#include <QDebug>
 
 class QGridLayout;
 
@@ -46,6 +46,12 @@ protected:
 	std::shared_ptr<IBuffer> m_cmosData1{ new CCirQueue };
 	std::shared_ptr<IBuffer> m_cmosData2{ new CCirQueue };
 	std::shared_ptr<IBuffer> m_cmosData3{ new CCirQueue };
+
+	std::shared_ptr<IBuffer> m_cmosFinalData0{ new CCirQueue };
+	std::shared_ptr<IBuffer> m_cmosFinalData1{ new CCirQueue };
+	std::shared_ptr<IBuffer> m_cmosFinalData2{ new CCirQueue };
+	std::shared_ptr<IBuffer> m_cmosFinalData3{ new CCirQueue };
+
 protected:
 
 	QTimer* m_refreshTimer{ nullptr };
