@@ -37,5 +37,18 @@
    ![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/save.bmp)
    ![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/saveToRGB.bmp)
    ![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/other.bmp)
-        
-      
+        
+##  2015.10--2016.3多CMOS相机上位机——快视系统
+- 项目描述：便携式文物鉴定相机
+
+> 
+1. 硬件FPGA进行CMOS图像采集，通过网络传输数据，然后在PC上实现4通道CMOS图像显示；
+2. 上位机可以通过界面操作完成对相机的控制。
+
+- 项目职责：
+
+> 
+1. 制定硬件和PC之间的通信协议；
+2. 运用C++编程，通过UDP接收网络数据并提取完整数据帧；
+3. 运用Qt编程，使用MVC框架完成图像数据显示，并且完成PC对硬件的控制功能。
+  
