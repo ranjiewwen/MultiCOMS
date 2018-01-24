@@ -30,8 +30,10 @@
    
    - 对其他3通道图像质量成像需改进；
 
+- 当前界面实现
+![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/%E6%9C%80%E6%96%B0%E7%95%8C%E9%9D%A2.png)
+
 ## 附件1：界面显示
- ！[image]()
  ![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/界面1.png)
  ![image](https://github.com/ranjiewwen/MultiCOMS/blob/master/界面2.png)
 ## 附件2：保存图像bmp
