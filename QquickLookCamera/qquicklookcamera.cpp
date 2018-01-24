@@ -306,21 +306,21 @@ void QquickLookCamera::showExpoTime()
 	tr("Please setExposuerTime:"), expTimeLabel->text().toInt(&ok), 0, 100, 1, &ok);
 	if (ok)
 	command->setET(eTime);*/
-	QLabel  *expTimeLabel = new QLabel;
-	expTimeLabel->setText(expTime);   //曝光时间的初始值
-	expTimeLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+	//QLabel  *expTimeLabel = new QLabel;
+	//expTimeLabel->setText(expTime);   //曝光时间的初始值
+	//expTimeLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
 	bool ok;
 	expTime = QInputDialog::getText(this, tr("input dialog:"), tr("input expTime"),
-		QLineEdit::Normal, expTimeLabel->text(), &ok);
+		QLineEdit::Normal,/* expTimeLabel->text()*/expTime, &ok);
 	bool ok1;
 	int hex = expTime.toInt(&ok1, 16);
-	while (hex < 0 || hex > 0x2ee0)
-	{
-		QMessageBox::critical(this, tr("Critical Message!"), tr("Please Input Again"));
-		expTime = QInputDialog::getText(this, tr("input dialog:"), tr("input expTime"), //ET：0C00 （0000-2EE0）
-			QLineEdit::Normal, expTimeLabel->text(), &ok);
-		hex = expTime.toInt(&ok1, 16);
-	}
+	//while (hex < 0 || hex > 0x2ee0)
+	//{
+	//	QMessageBox::critical(this, tr("Critical Message!"), tr("Please Input Again"));
+	//	expTime = QInputDialog::getText(this, tr("input dialog:"), tr("input expTime"), //ET：0C00 （0000-2EE0）
+	//		QLineEdit::Normal, expTimeLabel->text(), &ok);
+	//	hex = expTime.toInt(&ok1, 16);
+	//}
 	command->setET(hex);
 }
 void QquickLookCamera::showDigGain()

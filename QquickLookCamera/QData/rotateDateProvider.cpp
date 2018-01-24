@@ -57,6 +57,7 @@ bool rotateDateProvider::copyArea(int x,int y,int w,int h,unsigned char *extPtr)
 			&(*buffer) + ((y + _h)*m_features->payloadDataWidth + x) * static_cast<int>(m_features->payloadDataSize),
 			w*static_cast<int>(m_features->payloadDataSize));
 	}
+
 	return true;
 }
 
@@ -82,6 +83,7 @@ void rotateDateProvider::process()
 
        //完成图像数据旋转
 		Rotate(m_imageBuffer.get(), buf,width,height,90);
+		
 	}
 
 }
