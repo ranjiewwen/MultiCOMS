@@ -1,5 +1,25 @@
 ## MultiCOMS
 
+### 软件安装
+
+- [Qt环境搭建(Qt Creator)+Visual Studio](http://www.cnblogs.com/ranjiewen/p/5318768.html)
+- cn_visual_studio_ultimate_2013_x86_dvd_3009109
+- qt-opensource-windows-x86-msvc2013_64_opengl-5.4.1
+- qt-vs-addin-1.2.3-opensource
+
+- 按步骤将上面三个文件安装好，既可以在VS下运行Qt工程，首次需要vs配置qt和项目环境，然后运行回报缺少dll文件；然后再将qt的环境变量添加就即可
+
+### 使用方法
+
+- git clone https://github.com/ranjiewwen/QuickLookCameraForCMOS.git
+
+- 使用vs2013打开sln工程设置：
+     
+     - （1）QT5->Project Setting->Version 选择Qt5.4.1版本
+     - （2）QT5->Qt Options->Qt Version->add Qt5.4.1和对应的安装路径
+- run即可成功 
+
+
 **整个软件包含3个主要模块：数据部分、界面显示、相机&显示控制**
 - 数据部分：包括网络数据提取，数据处理，数据保存    
  > 通过发指令，硬件开始发送数据，PC端通过UDP接受数据，放入第一级输出缓冲区（process()中完成）；将第一级输出缓冲区和第二级输入缓冲区连接在一起，第二级使用双缓冲，将缓冲区0整帧的数据拷贝到缓冲区1中（process()中完成）；最后通过接口copyArea（）提供给界面显示。对于图像数据保存，彩色图像需要将8位bayer格式数据转为24位RGB数据保存为BMP格式，对于灰度图像，直接保存8位bayer格式数据为BMP格式。
